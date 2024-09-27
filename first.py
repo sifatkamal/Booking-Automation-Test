@@ -18,9 +18,10 @@ driver = webdriver.Chrome(options=options)
 
 
     # Eii website diye amra automation test korbo. Eii website ta te ekta download button Aase
-    # Ekhane download button ta manually click na korte hobe na. Eii kaj selenium e kore dibe. Amra etaii basically ekhane dekhtesi
+    # Ekhane download button ta manually click korte hobe na. Eii kaj selenium e kore dibe. Amra etaii basically ekhane dekhtesi
 
     #Website jeta amra use kortesi
+    
 driver.get("https://jqueryui.com/resources/demos/progressbar/download.html")
 
 
