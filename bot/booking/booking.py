@@ -19,8 +19,8 @@ class Booking:
         super(Booking, self).__init__()
 
 
-        self.implicitly_wait(15)
-        self.maximize_window()
+        self.driver.implicitly_wait(15)
+        self.driver.maximize_window()
 
     def __enter__(self):
 
