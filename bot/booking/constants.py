@@ -1,1 +1,1 @@
-BASE_URL = "https://wwww.booking.com"
+BASE_URL = "https://www.booking.com"
