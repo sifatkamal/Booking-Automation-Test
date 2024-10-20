@@ -18,6 +18,10 @@ class Booking:
 
         super(Booking, self).__init__()
 
+
+        self.implicitly_wait(15)
+        self.maximize_window()
+
     def __enter__(self):
 
         return self
