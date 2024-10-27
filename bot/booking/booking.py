@@ -1,6 +1,7 @@
 import os
 import booking.constants as const
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 class Booking:
 
@@ -36,3 +37,20 @@ class Booking:
 
         self.driver.get(const.BASE_URL)
 
+        try:
+
+            no_button = self.driver.find_element(By.CLASS_NAME, "")
+            no_button.click()
+            print("Clicked the cross!! Dont't worry")
+
+        except:
+
+            print("Everything is alright")
+
+    def change_currency(self, currency = None):
+
+        currency_element = self.driver.find_element(By.CLASS_NAME, "e4adce92df")
+
+        currency_element.click()
+
+        
