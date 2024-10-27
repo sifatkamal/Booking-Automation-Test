@@ -2,6 +2,8 @@ import os
 import booking.constants as const
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class Booking:
 
@@ -37,9 +39,18 @@ class Booking:
 
         self.driver.get(const.BASE_URL)
 
+        # In the website a popup appears in first page. Removed that popup in the next try except condition
+
         try:
 
-            no_button = self.driver.find_element(By.XPATH, "//*[name() = 'svg' and @xmlns='http://www.w3.org/2000/svg']")
+            # no_button = WebDriverWait(self.driver, 10).until(
+            #     self.driver.find_element(By.XPATH, "//*[name() = 'svg' and @xmlns='http://www.w3.org/2000/svg']")    
+            # )
+
+            no_button = WebDriverWait(self.driver, 20).until(
+                EC.presence_of_element_located((By.XPATH, "//*[name() = 'svg' and @xmlns='http://www.w3.org/2000/svg']"))
+            )
+
             no_button.click()
             print("Clicked the cross!! Dont't worry")
 
