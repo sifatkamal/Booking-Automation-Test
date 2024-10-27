@@ -39,7 +39,7 @@ class Booking:
 
         try:
 
-            no_button = self.driver.find_element(By.CLASS_NAME, "")
+            no_button = self.driver.find_element(By.XPATH, "//*[name() = 'svg' and @xmlns='http://www.w3.org/2000/svg']")
             no_button.click()
             print("Clicked the cross!! Dont't worry")
 
@@ -49,7 +49,7 @@ class Booking:
 
     def change_currency(self, currency = None):
 
-        currency_element = self.driver.find_element(By.CLASS_NAME, "e4adce92df")
+        currency_element = self.driver.find_element(By.CLASS_NAME, f'e4adce92df = "selected_currency={currency}"')
 
         currency_element.click()
 
