@@ -60,7 +60,11 @@ class Booking:
 
     def change_currency(self, currency = None):
 
-        currency_element = self.driver.find_element(By.CLASS_NAME, f'e4adce92df = "selected_currency={currency}"')
+        # currency_element = self.driver.find_element(By.CLASS_NAME, f'e4adce92df = "selected_currency={currency}"')
+
+        currency_element = self.driver.find_element(By.CLASS_NAME, 'e4adce92df')
+        
+        currency_element.send_keys(f'selected_currency={currency}')
 
         currency_element.click()
 
